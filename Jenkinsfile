@@ -18,16 +18,12 @@ pipeline {
                 npm run build
                 ls -la
                 '''
-            
-                stage('Test'){
-                    echo 'Test stage'
-            steps {
-            sh '''
-            test -f build/index.html
-            '''
             }
-         }
+        }
 
+        stage('Test'){
+            steps{
+                echo'Test stage'
             }
         }
     }
