@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        
+
         stage('Build') {
             agent{
                 docker{
@@ -48,7 +48,7 @@ pipeline {
                         junit 'jest-results/junit.xml'
                     }
                 } 
-                }
+            }
 
                 stage('E2E'){
                     agent{
