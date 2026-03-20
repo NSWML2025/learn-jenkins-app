@@ -57,11 +57,7 @@ pipeline {
                             reuseNode true
                         }
                     }
-        environment{
-                CI_ENVIRONMENT_URL = 'https://fastidious-travesseiro-87ebfc.netlify.app'
-            }
 
-                    
                     steps {
                         sh '''
                             npm install serve
@@ -105,6 +101,10 @@ pipeline {
                     image'mcr.microsoft.com/playwright:v1.39.0-jammy'
                     reuseNode true
                 }
+            }
+
+            environment{
+                CI_ENVIRONMENT_URL = 'https://fastidious-travesseiro-87ebfc.netlify.app'
             }
             
             steps {
