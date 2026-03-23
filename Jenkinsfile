@@ -99,7 +99,6 @@ pipeline {
                     reuseNode true
                 }
             }
-            
             steps {
                 sh '''
                     npm install netlify-cli
