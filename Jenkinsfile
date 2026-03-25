@@ -75,7 +75,7 @@ pipeline {
             }
         }
     }
-
+    /*
     stage('Deploy staging') {
             agent {
                 docker {
@@ -92,8 +92,8 @@ pipeline {
                     node_modules/.bin/netlify deploy --dir=build
                 '''
             }
-        }
-
+        } 
+        */
         stage('Deploy prod') {
             agent{
                 docker{
