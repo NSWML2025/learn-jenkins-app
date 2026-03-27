@@ -74,6 +74,7 @@ pipeline {
                 } 
             }
         }
+    }
     
            stage('Deploy Staging'){
             agent{
@@ -145,5 +146,4 @@ pipeline {
         } 
     }
   }  
-}
 }
