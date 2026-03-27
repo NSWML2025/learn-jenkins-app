@@ -28,12 +28,12 @@ pipeline {
         }
 
         stage('Tests') {
-            parallel{
-                stage('Unit tests'){
-                    agent{
-                        docker{
-                        image'node:18-alpine'
-                        reuseNode true
+            parallel {
+                stage('Unit tests') {
+                    agent {
+                        docker {
+                            image'node:18-alpine'
+                            reuseNode true
                         }
                     }
                     
