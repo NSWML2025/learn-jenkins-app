@@ -83,7 +83,7 @@ pipeline {
         }
     }
     
-           stage('Deploy Staging'){
+    stage('Deploy Staging'){
             agent{
                 docker{
                     image'my-playwright'
@@ -113,7 +113,7 @@ pipeline {
         } 
     } 
 
-    stage('Deploy Prod'){
+        stage('Deploy Prod'){
             agent{
                 docker{
                     image'my-playwright'
