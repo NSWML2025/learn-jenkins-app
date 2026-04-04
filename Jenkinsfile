@@ -74,7 +74,7 @@ pipeline {
         }
     }
     
-    stage('Deploy Staging'){
+        stage('Deploy Staging'){
             agent{
                 docker{
                     image'my-playwright'
