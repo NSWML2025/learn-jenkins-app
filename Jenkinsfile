@@ -7,7 +7,7 @@ pipeline {
         REACT_APP_VERSION = "1.0$BUILD_ID"
     }
 
-    satges {
+    stages {
 
        stage('Build') {
             agent{
