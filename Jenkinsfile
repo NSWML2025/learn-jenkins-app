@@ -7,7 +7,9 @@ pipeline {
         REACT_APP_VERSION = "1.0$BUILD_ID"
     }
 
-        stage('Build') {
+    satges {
+
+       stage('Build') {
             agent{
                 docker{
                   image'node:18-alpine'
@@ -134,3 +136,4 @@ pipeline {
         } 
     }
   }  
+}
