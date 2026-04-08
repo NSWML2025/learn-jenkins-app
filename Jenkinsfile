@@ -9,8 +9,6 @@ pipeline {
 
     stages {
         
-    stages {
-
         stage('AWS') {
             agent {
                 docker {
@@ -24,7 +22,7 @@ pipeline {
                 '''
             }
         }
-        
+
        stage('Build') {
             agent{
                 docker{
