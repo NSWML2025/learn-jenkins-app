@@ -3,7 +3,10 @@ pipeline {
 
     environment{
         REACT_APP_VERSION = "1.0$BUILD_ID"
-        AWS_DEFAULT_REGION = 'us-east-1'    
+        AWS_DEFAULT_REGION = 'us-east-1'  
+        AWS_ECS_CLUSTER = 'LearnJenkinsApp-Cluster-Prod'
+        AWS_ECS_SERVICE_PROD = 'LearnJenkinsApp-Service-Prod'
+        AWS_ECS_TD_PROD = 'LearnJenkinsApp-TaskDefinition-Prod'
     }
     
 stages {    
@@ -24,6 +27,7 @@ stages {
                         LATEST_TD_REVISION=$(aws ecs register-task-definition --cli-input-json file://AWS/task-definition.json | jq '.taskDefinition.revision')
                         echo $LATEST_TD_REVISION
                         aws ecs update-service --cluster LearnJenkinsApp-Cluster-Prod --service LearnJenkinsApp-Service-Prod --task-definition LearnJenkinsApp-TaskDefinition-Prod:$LATEST_TD_REVISION
+                        aws ecs wait services-stable --cluster $AWS_ECS_CLUSTER --services $AWS_ECS_SERVICE_PROD                    
                     '''               
                 }   
             }
